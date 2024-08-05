@@ -1,0 +1,263 @@
+@import 'mixinsAndVariables.scss';
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{ 
+    scroll-behavior: smooth;
+}
+body{
+    @include mainFont();
+    line-height: 1.6;
+}
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+p{
+    font-size: 20px;
+}
+header{
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+    z-index: 99;
+    background-color: rgba($color: $mainColor, $alpha: 0.8);
+    nav{
+        ul{
+            @include flexAround();
+            list-style-type: none;
+            li{
+                a{
+                    text-decoration: none;
+                    padding: 15px;
+                    text-transform: uppercase;
+                    color: $linkColor;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+#home{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    #coverPhoto {
+        position: relative;
+        width: 100%;
+        cursor: grab;
+        #cover{
+            // position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+        }
+        #coverDark{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%!important;
+            height: auto!important;
+        }
+    }
+    #coverText{
+        position: absolute;
+        z-index: 80;
+        width: 100%;
+        @include flexBetween();
+        text-align: center;
+        top: 50%;
+        .coverTitle{
+            width: 40%;
+            p{
+                font-size: 2em;
+                color: $headingColor;
+            }
+            h1{
+                color: $headingColor;
+            }
+        }
+    }
+}
+#projects{
+    @include sectionStyle();
+    h2{
+        @include headingStyle();
+    }
+    #projectsWrapper{
+        @include wrapper();
+        @include flexBetween();
+        .project{
+            width: 45%;
+            padding: 15px;
+            box-shadow: 0px 0px 10px 0px $barColor;
+            transition-duration: 0.2s;
+            border-radius: 5px;
+            background-color: #fff;
+            a{
+                font-size: 20px;
+                color: $linkColor;
+                text-decoration: none;
+            }
+            &:hover{
+                transform: scale(1.1);
+                transition-duration: 0.2s;
+                box-shadow: 0px 0px 20px 0px $barColor;
+            }
+            img{
+                margin-bottom: 15px
+            }
+        }
+    }
+}
+#skills{
+    @include sectionStyle();
+    background-color: $mainColor;
+    h2{
+        @include headingStyle();
+    }
+    #skillsWrapper{
+        @include wrapper();
+        @include flexBetween();
+        align-items: flex-end;
+        .skill{
+            width: 15%;
+            border-radius: 5px;
+            .skillBar{
+                background-color: $barColor;
+                background-image: linear-gradient(180deg, $mainColor, $barColor);
+                width: 80%;
+                margin: 0px auto;
+                &.html{
+                    height: 200px;
+                }
+                &.css{
+                    height: 180px;
+                }
+                &.sass{
+                    height: 180px;
+                }
+                &.less{
+                    height: 100px;
+                }
+                &.bootstrap{
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+#education{
+    @include sectionStyle();
+    h2{
+        @include headingStyle();
+    }
+    #educationWrapper{
+        @include wrapper();
+        @include flexBetween();
+        .education{
+            i{
+                font-size: 100px;
+                color: $iconColor;
+            }
+            div{
+                margin: 20px 0px;
+            }
+        }
+    }
+}
+
+#about{
+    @include sectionStyle();    
+    // background-image: linear-gradient(315deg, $mainColor,$mainColor, $barColor);
+    background-color: $mainColor;
+    h2{
+        @include headingStyle();
+    }
+    #aboutWrapper{
+        @include wrapper();
+        @include flexBetween();
+        text-align: justify;
+        .about{
+            width: 45%;
+            p{
+                margin: 10px 0px;
+            }
+            h3{
+                font-size: 22px;
+            }
+            a{
+                font-size: 35px;
+                margin-right: 15px;
+                color: $linkColor;
+            }
+        }
+    }
+}
+#contact{
+    @include sectionStyle();
+    h2{
+        @include headingStyle();
+    }
+    #contactWrapper{
+        @include wrapper();
+        .contact{
+            @include flexBetween();
+            text-align: left;
+            .input{
+                width: 45%;
+                margin: 10px 0px;
+                input{
+                    @include input();
+                }
+            }
+            textarea{
+                width: 100%;
+                resize: vertical;
+                margin: 10px 0px;
+                height: 200px;
+                @include input();
+            }
+            input[type=submit]{
+                min-width: fit-content;
+                width: 30%;
+                padding: 10px;
+                background-color: $barColor;
+                color: $mainColor;
+            }
+        }
+    }
+    #info{
+        @include wrapper();
+        @include flexBetween();
+        .info{
+            width: 20%;
+            i{
+                font-size: 35px;
+                color: $barColor;
+            }
+        }
+    }
+}
+
+footer{
+    background-color: $mainColor;
+    padding: 20px;
+    #footerWrapper{
+        @include wrapper();
+        margin: 0px;
+        p{
+            margin: 15px 0px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0px 15px;
+            color: $linkColor;
+        }
+    }
+}

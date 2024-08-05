@@ -1,0 +1,144 @@
+@import 'mixinsAndVariables.scss';
+
+@media screen and (max-width: 1200px){
+    #home{
+        height: unset;
+        #coverPhoto{
+            #cover{
+                position: unset;
+            }
+        }
+        #coverText{
+            top: 30%;
+            .coverTitle{
+                h1{
+                    font-size: 25px;
+                }
+                p{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    header{
+        position: unset;
+        nav{
+            ul{
+                flex-direction: column;
+                li{
+                    a{
+                        font-size: 18px;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+    #home{
+        height: unset;
+        #coverPhoto{
+            #cover{
+                position: unset;
+            }
+        }
+    }
+    #projects{
+        #projectsWrapper{
+            justify-content: center;
+            .project{
+                width: 90%;
+                margin: 20px 0px;
+            }
+        }
+    }
+    #skills{
+        #skillsWrapper{
+            justify-content: center;
+            .skill{
+                width: 25%;
+                margin: 15px;
+            }
+        }
+    }
+    #education{
+        #educationWrapper{
+            flex-direction: row-reverse;
+            .education{
+                &.school{
+                    display: none;
+                }
+            }
+        }
+    }
+    #about{
+        #aboutWrapper{
+            justify-content: center;
+            .about{
+                width: 90%;
+            }
+        }
+    }
+    #contact{
+        #info{
+            justify-content: center;
+            .info{
+                width: 45%;
+                margin: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    #skills{
+        #skillsWrapper{
+            justify-content: center;
+            .skill{
+                width: 40%;
+                margin: 5px;
+                h3{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    #contact{
+        #contactWrapper{
+            .contact{
+                .input{
+                    width: 100%;
+                }
+            }
+        }
+        #info{
+            .info{
+                width: 100%;
+            }
+        }
+    }
+    #home{
+        #coverText{
+            top: 20%;
+            .coverTitle{
+                width: 100%;
+                h1{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    #education{
+        #educationWrapper{
+            flex-direction: row;
+            .education{
+                width: 100%;
+            }
+        }
+    }
+}
